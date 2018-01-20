@@ -23,7 +23,6 @@
     "test": "jasmine-node tests/browser"
   },
   "dependencies": {
-    "com.wikitude.phonegap.WikitudePlugin": "https://github.com/timkim/wikitude-cordova-plugin.git",
     "cordova-android": "~6.4.0",
     "cordova-ios": "^4.5.3",
     "cordova-plugin-battery-status": "^1.2.5",
@@ -115,9 +114,8 @@
       "phonegap-plugin-contentsync": {},
       "phonegap-plugin-mobile-accessibility": {},
       "phonegap-plugin-push": {
-        "FCM_VERSION": "11.0.1"
+        "SENDER_ID": "1096592179912"
       },
-      "com.wikitude.phonegap.WikitudePlugin": {},
       "cordova-plugin-whitelist": {}
     }
   }
