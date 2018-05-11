@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.adobe.phonegap.app" version="1.8.4" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>PhoneGap</name>
+<widget android-versionCode="1" id="edu.berkeley.eecs.emission.devapp" ios-CFBundleVersion="35" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>em-devapp</name>
     <description>
-        The PhoneGap Developer app is a testing utility for web developers and designers using the PhoneGap framework. After installing this app on your device you will be able to connect it to the PhoneGap desktop app to instantly view and test your work
+        The emission Developer app is a clone of the PhoneGap Developer app with the emission plugins. It is a testing utility for web developers and designers using the emission platform. After installing this app on your device or simulator you will be able to use phonegap serve to autorefresh without re-deploying the app everytime.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        Adobe PhoneGap Team
+    <author email="shankari@eecs.berkeley.edu" href="http://e-mission.eecs.berkeley.edu">
+        e-mission Team
     </author>
     <hook src="resources/script/before-test-runner.js" type="before_prepare" />
     <hook src="resources/script/after-test-runner.js" type="after_prepare" />
@@ -16,6 +16,21 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <access origin="*" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="18" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="100" />
+    <preference name="xwalkVersion" value="19+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
+    <preference name="emSensorDataCollectionProtocolApprovalDate" value="2016-07-14" />
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
     <content src="index.html" />
     <platform name="ios">
         <preference name="Orientation" value="all" />
@@ -51,7 +66,8 @@
         <splash height="1242" src="resources/splash/ios/Default-Landscape-736h.png" width="2208" />
     </platform>
     <platform name="android">
-        <preference name="android-minSdkVersion" value="19" />
+        <preference name="android-minSdkVersion" value="18" />
+        <preference name="android-targetSdkVersion" value="21" />
         <preference name="Orientation" value="default" />
         <preference name="SplashScreenDelay" value="0" />
         <icon density="ldpi" src="resources/icon/android/icon-36.png" />
@@ -60,48 +76,37 @@
         <icon density="xhdpi" src="resources/icon/android/icon-96.png" />
         <resource-file src="google-services.json" target="google-services.json" />
     </platform>
-    <engine name="android" spec="~6.4.0" />
-    <engine name="ios" spec="^4.5.3" />
-    <plugin name="cordova-plugin-battery-status" spec="^1.2.5" />
-    <plugin name="cordova-plugin-ble-central" spec="^1.1.4">
-        <variable name="BLUETOOTH_USAGE_DESCRIPTION" value="Bluetooth development purposes" />
-    </plugin>
-    <plugin name="cordova-plugin-camera" spec="^3.0.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Camera used for development purposes" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
-    </plugin>
-    <plugin name="cordova-plugin-device" spec="^1.1.7" />
-    <plugin name="cordova-plugin-device-motion" spec="^1.2.5" />
-    <plugin name="cordova-plugin-dialogs" spec="^1.3.4" />
-    <plugin name="cordova-plugin-file" spec="^5.0.0" />
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.0" />
-    <plugin name="cordova-plugin-geolocation" spec="^3.0.0">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="Geolocation used for development purposes" />
-    </plugin>
-    <plugin name="cordova-plugin-globalization" spec="^1.0.8" />
-    <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <engine name="ios" spec="^4.5.4" />
+    <engine name="android" spec="^6.4.0" />
+    <plugin name="cordova-plugin-device" spec="~2.0.1" />
+    <plugin name="cordova-plugin-file" spec="~6.0.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="https://github.com/shankari/cordova-plugin-inappbrowser.git" />
     <plugin name="cordova-plugin-insomnia" spec="^4.3.0" />
-    <plugin name="cordova-plugin-media" spec="^4.0.0">
-        <variable name="MICROPHONE_USAGE_DESCRIPTION" value=" " />
-    </plugin>
-    <plugin name="cordova-plugin-media-capture" spec="^2.0.0">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Camera used for development purposes" />
-        <variable name="MICROPHONE_USAGE_DESCRIPTION" value="Microphone used for development purposes" />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Photo library used for development purposes" />
-    </plugin>
-    <plugin name="cordova-plugin-network-information" spec="^1.3.4" />
-    <plugin name="cordova-plugin-screen-orientation" spec="^2.0.2" />
-    <plugin name="cordova-plugin-splashscreen" spec="^4.1.0" />
-    <plugin name="cordova-plugin-statusbar" spec="^2.3.0" />
-    <plugin name="cordova-plugin-vibration" spec="^2.1.6" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
-    <plugin name="phonegap-plugin-barcodescanner" spec="^6.0.8">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value="Camera used for development purposes" />
-    </plugin>
+    <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="~5.2.1" />
     <plugin name="phonegap-plugin-contentsync" spec="^1.4.1" />
-    <plugin name="phonegap-plugin-mobile-accessibility" spec="^1.0.5" />
-    <plugin name="phonegap-plugin-push" spec="^2.1.2">
+    <plugin name="phonegap-plugin-push" spec="1.9.2">
         <variable name="SENDER_ID" value="1096592179912" />
     </plugin>
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+    <plugin name="cordova-plugin-app-version" spec="~0.1.9" />
+    <plugin name="cordova-plugin-customurlscheme" spec="~4.3.0">
+        <variable name="URL_SCHEME" value="emission" />
+    </plugin>
+    <plugin name="cordova-plugin-email-composer" spec="~0.8.12" />
+    <plugin name="cordova-plugin-ionic" spec="3.0.0">
+        <variable name="APP_ID" value="e0d8cdec" />
+        <variable name="CHANNEL_NAME" value="Production" />
+        <variable name="UPDATE_METHOD" value="none" />
+    </plugin>
+    <plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="https://github.com/shankari/cordova-plugin-local-notifications.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.auth" spec="https://github.com/e-mission/cordova-jwt-auth.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.comm" spec="https://github.com/e-mission/cordova-server-communication.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.datacollection" spec="https://github.com/e-mission/e-mission-data-collection.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.serversync" spec="https://github.com/e-mission/cordova-server-sync.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.settings" spec="https://github.com/e-mission/cordova-connection-settings.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.transitionnotify" spec="https://github.com/e-mission/e-mission-transition-notify.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.unifiedlogger" spec="https://github.com/e-mission/cordova-unified-logger.git" />
+    <plugin name="edu.berkeley.eecs.emission.cordova.usercache" spec="https://github.com/e-mission/cordova-usercache.git" />
 </widget>
