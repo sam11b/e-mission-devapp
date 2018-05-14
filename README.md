@@ -1,28 +1,63 @@
-# PhoneGap Developer App [![Build Status][travis-ci-img]][travis-ci-url] [![bitHound Score][bithound-img]][bithound-url]
+# e-mission devapp (adapted from PhoneGap Developer App)
 
-> Available in an app store near you!
+> Work on the emission UI without setting up the native build environment
 
 ## Overview
 
-The PhoneGap Developer app is a testing utility for web developers and designers
-using the PhoneGap framework. After installing the PhoneGap Developer app you
-can connect to your PhoneGap desktop app to instantly view and test your project
-on the device.
+The e-mission developer app (adapted from the [PhoneGap Developer
+App](https://github.com/phonegap/phonegap-app-developer) is a testing utility
+for web developers and designers using the e-mission platform. After installing
+the e-mission devapp on your emulator or physical device (android) or emulator
+(iOS), you can connect to your e-mission phone app live deploy server. This
+allows you to:
+1. view and test the UI instantly,
+2. without compiling any native code, and
+2. reload the UI automatically on every saved change
 
-For more information, see [Developer App Reference Guide][3] on the PhoneGap Docs.
+For more information, see the CLI instructions in the [Developer App Reference Guide][3] on the PhoneGap Docs. e-mission-dev-app has not been tested with the PhoneGap desktop app. If you get it to work, please submit a pull request with instructions :)
 
 ## Download
+Unlike the PhoneGap Developer App, the e-mission devapp is NOT in the stores.
+You will need to manually download the latest release.
+https://github.com/e-mission/e-mission-devapp/releases
 
-- [Android Google Play][1]
-- [Windows Phone store][7]
+It turns out that the PhoneGap Developer App has also been removed from iTunes,
+so there doesn't appear to be much advantage to putting the app in the stores.
+(https://twitter.com/phonegap/status/982022400085712896)
+
+## Installing
+
+1. Install the development enviroment
+    - iOS: xcode
+    - android: android studio
+
+2. Launch the simulator, either from the development environment UI, or 
+    - iOS: `$ ios-sim start`
+    - android: `$ $ANDROID_HOME/platform-tools/emulator/emulator -list-avds | head -n 1 | xargs $ANDROID_HOME/platform-tools/emulator/emulator -avd`
+
+3. Drag and drop the binary into the emulator
+    - iOS: em-devapp.app
+    - android: em-devapp.apk
+
+4. Change the host IP address to the one that the server is listening to
+
+## Everything below this line is from the standard phonegap app README
+---
+
+The CLI parts of this documentation should work, the desktop app support will not.
 
 ## Documentation
+
+*em-devapp note*: This is the part you need to read to figure troubleshoot app *usage*.
 
 - [Developer App Reference Guide](http://docs.phonegap.com/references/developer-app/)
 - [FAQ/Troubleshooting](http://docs.phonegap.com/references/developer-app/troubleshoot-faq/)
 - [Unable to Connect or Download from Server](http://docs.phonegap.com/references/developer-app/troubleshoot-faq/#phonegap-developer-app-is-unable-to-download-from-the-server)
 
 ## Development
+
+*em-devapp note*: This part is only useful if you want to *modify* the devapp.
+devapp itself.
 
 ### Setup
 
