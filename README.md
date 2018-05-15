@@ -5,7 +5,7 @@
 ## Overview
 
 The e-mission developer app (adapted from the [PhoneGap Developer
-App](https://github.com/phonegap/phonegap-app-developer) is a testing utility
+App](https://github.com/phonegap/phonegap-app-developer)) is a testing utility
 for web developers and designers using the e-mission platform. After installing
 the e-mission devapp on your emulator or physical device (android) or emulator
 (iOS), you can connect to your e-mission phone app live deploy server. This
@@ -38,8 +38,14 @@ so there doesn't appear to be much advantage to putting the app in the stores.
 3. Drag and drop the binary into the emulator
     - iOS: em-devapp.app
     - android: em-devapp.apk
+    
+4. Launch the installed app and wait for it to go through the "Loading" and "Hi!" screens until it comes to the "Server address" screen
 
-4. Change the host IP address to the one that the server is listening to
+4. Start the server in a clone derived from the [e-mission-phone](https://github.com/e-mission/e-mission-phone) repository
+
+1. Fill in one of the URL(s) that the server is listening to as the "Server address"
+
+1. "Connect" and enjoy tinkering with the UI
 
 ## Everything below this line is from the standard phonegap app README
 ---
